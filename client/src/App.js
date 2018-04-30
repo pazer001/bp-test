@@ -42,7 +42,7 @@ class App extends Component {
 
     showLastActivity(email) {
         const lastActivity    =   Math.max(...this.state.messages.filter(message => message.email === email).map(message => message.submitted));
-        this.setState({modalActive: true, lastActivity})
+        this.setState({modalActive: !this.state.modalActive, lastActivity})
     }
 
     componentDidMount() {
